@@ -1,0 +1,23 @@
+<!doctype html>
+<head>
+<title>Práctica 2 DAI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style_img.css') }}">
+</head>
+<body>
+	<header>
+		<h1>Prueba de imágenes estáticas</h1>
+	</header>
+	<main>
+		<section>
+			<img src="{{ url_for('static', filename='images/img01.jpg') }}">
+		</section>
+		<section>
+			<img src="{{ url_for('static', filename='images/img02.jpeg') }}">
+		</section>
+		<section>
+			<img src="{{ url_for('static', filename='images/img03.jpg') }}">
+		</section>
+	</main>
+	<footer>	
+	</footer>
+</body>
