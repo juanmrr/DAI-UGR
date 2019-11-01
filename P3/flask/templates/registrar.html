@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+	<div id="login">
+    <h2>Registrarse</h2>
+      <div id  = "registrar">
+        <form action = "registrar" method = "POST">
+         <label>Usuario <input type="text" name="user"></label>
+         <label>Contraseña <input type="password" name="pass"></label>
+         <input type = "submit" value = "Registrar" />
+      </form>
+      </div>
+    {% if error %}
+      <div class = "error">
+        {{ error }} 
+      </div>
+    {%endif%}
+  </div>
+{% endblock %}

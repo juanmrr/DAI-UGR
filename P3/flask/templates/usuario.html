@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Modificar datos de usuario</h2>
+  <div id  = "iniciar_sesion">
+      <form action = "usuario" method = "POST">
+       <label>Usuario <input type="text" name="user" value={{datos[0]}}></label>
+       <label>Contraseña <input type="password" name="pass" value={{datos[1]}}></label>
+       <input type = "submit" value = "Modificar" />
+    </form>
+    </div>
+{% endblock %}
