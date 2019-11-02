@@ -183,12 +183,21 @@ def delete():
 	else:
 		return render_template("delete.html")
 
-		
-		#elif request.form['peso']:
-		#	peso = request.form['peso']
-		#	nombre = request.form['name']
 
-		#	if db.samples_pokemon.update({"name" : nombre}, {$set : {"weight" : peso}}):
-		#		modificado = "Ha sido modificado con éxito"
+@app.route('/modify.html', methods = ['POST', 'GET'])
+@app.route('/modify', methods = ['POST', 'GET'])
+def modify():
 
-		#	return render_template('mongo.html', modificar = modificado)
+	client = MongoClient("mongo", 27017)
+	db = client.SampleCollections
+
+	if request.method == 'POST':
+		peso = request.form['weight']
+		nombre = request.form['name']
+
+		if db.samples_pokemon.update({"name" : nombre}, {"$set" : {"weight" : peso}}):
+			modificado = "Ha sido modificado con éxito"
+
+		return render_template('modify.html', modificar = modificado)
+	else:
+		return render_template("modify.html")

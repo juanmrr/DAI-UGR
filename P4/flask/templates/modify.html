@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+{% if modificar %}
+	<p>{{modificar}}</p>
+	<form action="mongo">
+		<input type="submit" value="Volver" />
+	</form>
+{% else %}
+	<div class="mongo">
+		<div id="busqueda">
+			<p>Modificar peso</p>
+			<form action = "modify" method = "POST">
+			<label>Nombre<input type="text" name="name"></label>
+			<label>Nuevo peso<input type="number" name="weight"></label>
+			<input type = "submit" value = "Modificar" />
+			</form>
+		</div>
+	</div>
+{% endif %}
+{% endblock %}
