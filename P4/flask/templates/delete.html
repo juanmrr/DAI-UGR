@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+{% if eliminar %}
+	<p>{{eliminar}}</p>
+	<form action="mongo">
+		<input type="submit" value="Volver" />
+	</form>
+{% else %}
+	<div class="mongo">
+		<div id="busqueda">
+			<p>Eliminar</p>
+			<form action = "delete" method = "POST">
+			<label>Nombre<input type="text" name="delete"></label>
+			<input type = "submit" value = "Eliminar" />
+			</form>
+		</div>
+	</div>
+{% endif %}
+{% endblock %}

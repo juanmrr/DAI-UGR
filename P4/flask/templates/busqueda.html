@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{% if busqueda %}
+	<div id="busqueda">
+		<p>Resultado de la búsqueda:</p>
+			{% for i in busqueda %}
+				{% if i != 0 %}
+					<div><p>ID: {{i.id}} Nombre: {{i.name}} Peso: {{i.weight}} Altura: {{i.height}}</p></div>
+				{%endif%}
+			{%endfor%}
+		<form action="mongo">
+			<input type="submit" value="Volver" />
+		</form>
+	</div>
+{% else %}
+	<div class="mongo">
+		<div id="busqueda">
+			<p>Búsqueda por nombre:</p>
+			<form action = "busqueda" method = "POST">
+			<label>Nombre<input type="text" name="nombre"></label>
+			<input type = "submit" value = "Buscar" />
+			</form>
+		</div>
+	</div>
+{% endif %}
+{% endblock %}

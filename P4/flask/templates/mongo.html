@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="mongo">
+		<form name='form'>
+		    <input type="button" value="Buscar Pokemon" name="nuevo" onclick= "document.form.action = 'busqueda'; document.form.submit()" />
+
+		    <input type="button" value="Eliminar Pokemon de la BD" name="eliminar" onclick= "document.form.action = 'delete'; document.form.submit()" />
+		</form>
+	</div>
+{% endblock %}
