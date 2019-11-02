@@ -23,7 +23,6 @@ def addPage(page):
 			aux2 = "histo" + str(i)
 			session[aux2] = session[aux1] 
 			historial[i] = session[aux2]
-			print(session[aux2])
 
 	session["histo0"] = page
 	historial[0] = page
@@ -32,7 +31,7 @@ def addPage(page):
 
 def showPage(page):
 	if 'username' in session:
-		user=session['username']
+		user = session['username']
 		historial =  addPage(page)
 		return render_template(page, user = user, historial = historial)
 	else :
@@ -140,4 +139,4 @@ def usuario():
 
 			return render_template("usuario.html", user = user, historial = historial, datos = datos)
 		else: 
-			return redirect(redirect('index'))
+			return render_template('index.html')

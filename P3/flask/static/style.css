@@ -593,3 +593,7 @@ form {
 	flex-direction: column;
 	padding-left: 5%;
 }
+
+#user {
+	margin: auto;
+}
